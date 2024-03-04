@@ -35,10 +35,10 @@
         </p>
         <p>
             <label for="contra">Contraseña: </label>
-            <input type="password" id="contra" name="contra">
+            <input type="password" id="contra" name="contra"><button onclick="muestraContrasena()">Ver</button>
         </p>
         <p>
-            <label for="repcon">Repita contraseña: </label>
+            <label for="repcon">Repita contraseña: </label> 
             <input type="password" id="repcon" name="repcon">
         </p>
         <input type="submit" value="Dar de Alta">
@@ -71,14 +71,21 @@
                 return false;
             }
             let contra = document.getElementById("contra");
+            let repcon = document.getElementById("repcon");
             if (contra.value != repcon.value ) {
                 alert("Las contraseñas deben ser iguales");
                 contra.focus();
                 return false;
             }
             
+            
             alert("Datos correctos. Procedo a enviar");
             return true;
+        }
+
+        function muestraContrasena() {
+            let contra = document.getElementById("contra");
+            contra.type = "text";
         }
 
 
